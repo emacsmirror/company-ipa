@@ -22,3 +22,7 @@ After the package is installed, you can enable `company-ipa` by adding the follo
 
 Use the variable `company-ipa-symbol-prefix` to change the prefix to trigger completion.
 By default this is bound to `¬`.
+
+```emacs
+(setq company-ipa-symbol-prefix "·")
+```
