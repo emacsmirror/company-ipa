@@ -209,7 +209,7 @@
 
 (defun company-ipa--make-candidates (alist)
   "Build a list of ipa symbols ready to be used in a company backend.
-Argument ALIST an alist of ipa symboles.
+Argument ALIST an alist of ipa symboles."
   (delq nil
         (mapcar
          (lambda (el)
