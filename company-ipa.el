@@ -197,13 +197,9 @@
   :group 'company-ipa
   :type 'string)
 
-(setq company-ipa--latex-prefix-regexp
-      (concat (regexp-quote company-ipa-symbol-prefix)
-              "[^ \t\n]+"))
-
-(setq company-ipa--unicode-prefix-regexp
-      (concat (regexp-quote company-ipa-symbol-prefix)
-              "[^ \t\n]*"))
+(defvar company-ipa--unicode-prefix-regexp
+  (concat (regexp-quote company-ipa-symbol-prefix)
+          "[^ \t\n]*"))
 
 ;;; INTERNALS
 
