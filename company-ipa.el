@@ -34,15 +34,10 @@
 
 ;; To activate: (add-to-list 'company-backends 'company-ipa-symbols-unicode)
 
-;; To use: type '¬' and you should get completions
+;; To use: type '~pp' and you should get completions
 
 ;; To change the prefix, execute:
-;; (setq company-ipa-symbol-prefix "·")
-;; before loading this file
-
-;; If you want to change the list of symbols you should either do it here
-;; or (setq company-ipa-symbol-list-basic '((...)))
-;; before calling this file
+;; (setq company-ipa-set-trigger-prefix "¬")
 
 ;; For best performance you should use this with company-flx:
 ;; (company-flx-mode +1)
@@ -192,7 +187,7 @@
     ("diac" " [sup] tie bar above " 865  "x͡x"))
   "List of basic IPA symbols.")
 
-(defcustom company-ipa-symbol-prefix "¬"
+(defcustom company-ipa-symbol-prefix "~pp"
   "Prefix for ipa insertion."
   :group 'company-ipa
   :type 'string)
@@ -244,11 +239,20 @@ Argument REGEXP REGEXP for matching prefix."
       (delete-region (point) pos)
       (insert symbol))))
 
+(defun company-ipa-set-trigger-prefix (prefix)
+  "Change the trigger prefix for company ipa."
+  (setq company-ipa-symbol-prefix prefix)
+    (setq company-ipa--unicode-prefix-regexp
+	  (concat (regexp-quote company-ipa-symbol-prefix)
+		  "[^ \t\n]*"))
+    (setq company-ipa--symbols
+	  (company-ipa--make-candidates company-ipa-symbol-list-basic)))
+
 ;;; BACKENDS
 
 ;;;###autoload
 (defun company-ipa-symbols-unicode (command &optional arg &rest _ignored)
-  "Company backend for insertion of Unicode mathematical symbols.
+  "Company backend for insertion of Unicode ipa symbols.
 Argument COMMAND Matching command.
 Optional argument ARG ARG for company."
   (interactive (list 'interactive))
