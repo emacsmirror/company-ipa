@@ -242,11 +242,11 @@ Argument REGEXP REGEXP for matching prefix."
 (defun company-ipa-set-trigger-prefix (prefix)
   "Change the trigger prefix for company ipa."
   (setq company-ipa-symbol-prefix prefix)
-    (setq company-ipa--unicode-prefix-regexp
-	  (concat (regexp-quote company-ipa-symbol-prefix)
-		  "[^ \t\n]*"))
-    (setq company-ipa--symbols
-	  (company-ipa--make-candidates company-ipa-symbol-list-basic)))
+  (setq company-ipa--unicode-prefix-regexp
+	(concat (regexp-quote company-ipa-symbol-prefix)
+		"[^ \t\n]*"))
+  (setq company-ipa--symbols
+	(company-ipa--make-candidates company-ipa-symbol-list-basic)))
 
 ;;; BACKENDS
 
