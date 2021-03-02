@@ -1,9 +1,9 @@
-;;; company-ipa.el --- Ipa backend for company -*- lexical-binding: t -*-
+;;; company-ipa.el --- IPA backend for company -*- lexical-binding: t -*-
 
 ;; Copyright (C) Matías Guzmán Naranjo.
 
 ;; Author: Matías Guzmán Naranjo <mguzmann89@gmail.com>
-;; Keywords: convenience, company, ipa
+;; Keywords: convenience, company, IPA
 ;; Version: 20201003
 ;; URL: https://github.com/mguzmann/company-ipa
 ;; Package-Requires: ((emacs "24.3") (company "0.8.12"))
@@ -25,7 +25,7 @@
 
 ;;; Commentary:
 
-;; This package adds an easy way of inserting ipa into a document
+;; This package adds an easy way of inserting IPA (International Phonetic Alphabet) into a document
 
 ;; Usage
 ;; =====
@@ -48,7 +48,7 @@
 ;;; Code:
 
 (defgroup company-ipa nil
-  "Completion back-ends for ipa symbols Unicode."
+  "Completion back-ends for IPA symbols Unicode."
   :group 'company
   :prefix "company-ipa-")
 
@@ -188,7 +188,7 @@
   "List of basic IPA symbols.")
 
 (defcustom company-ipa-symbol-prefix "~pp"
-  "Prefix for ipa insertion."
+  "Prefix for IPA insertion."
   :group 'company-ipa
   :type 'string)
 
@@ -199,8 +199,8 @@
 ;;; INTERNALS
 
 (defun company-ipa--make-candidates (alist)
-  "Build a list of ipa symbols ready to be used in a company backend.
-Argument ALIST an alist of ipa symboles."
+  "Build a list of IPA symbols ready to be used in a company backend.
+Argument ALIST an alist of IPA symboles."
   (delq nil
         (mapcar
          (lambda (el)
@@ -240,7 +240,7 @@ Argument REGEXP REGEXP for matching prefix."
       (insert symbol))))
 
 (defun company-ipa-set-trigger-prefix (prefix)
-  "Change the trigger prefix for company ipa."
+  "Change the trigger prefix for company IPA."
   (setq company-ipa-symbol-prefix prefix)
   (setq company-ipa--unicode-prefix-regexp
 	(concat (regexp-quote company-ipa-symbol-prefix)
@@ -252,7 +252,7 @@ Argument REGEXP REGEXP for matching prefix."
 
 ;;;###autoload
 (defun company-ipa-symbols-unicode (command &optional arg &rest _ignored)
-  "Company backend for insertion of Unicode ipa symbols.
+  "Company backend for insertion of Unicode IPA symbols.
 Argument COMMAND Matching command.
 Optional argument ARG ARG for company."
   (interactive (list 'interactive))
