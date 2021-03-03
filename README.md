@@ -28,5 +28,5 @@ Use the variable `company-ipa-symbol-prefix` to change the prefix to trigger com
 By default this is bound to `~pp`. You can change this with:
 
 ```emacs
-(setq company-ipa-set-trigger-prefix "¬")
+(company-ipa-set-trigger-prefix "¬")
 ```

@@ -37,7 +37,7 @@
 ;; To use: type '~pp' and you should get completions
 
 ;; To change the prefix, execute:
-;; (setq company-ipa-set-trigger-prefix "¬")
+;; (company-ipa-set-trigger-prefix "¬")
 
 ;; For best performance you should use this with company-flx:
 ;; (company-flx-mode +1)
