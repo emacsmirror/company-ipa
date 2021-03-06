@@ -3,7 +3,7 @@ company-ipa
 
 ![screencast](screencast-out.gif)
 
-This package adds ipa completion for company.
+This package adds IPA completion for company.
 
 Usage
 =====
@@ -22,7 +22,7 @@ After the package is installed, you can enable `company-ipa` by adding the follo
 (add-to-list 'company-backends 'company-ipa-symbols-unicode)
 ```
 
-It is highly recomended that you use company-flx, otherwise completions will not work very well.
+It is highly recomended that you use [`company-flx`](https://github.com/PythonNut/company-flx), otherwise completions will not work very well.
 
 Use the variable `company-ipa-symbol-prefix` to change the prefix to trigger completion.
 By default this is bound to `~pp`. You can change this with:
@@ -37,8 +37,8 @@ Completion without company-flx
 If you do not wish to use company-flx, completion is more cumbersome, but still
 possible. First, you should make sure that the completion trigger
 (`company-ipa-symbol-prefix`) is at least as long as
-`company-minimum-prefix-length`. (In the default setup for company and
-company-ipa this is the case.) Then, after typing the trigger, you should first
+`company-minimum-prefix-length`. (In the default setup for `company` and
+`company-ipa` this is the case.) Then, after typing the trigger, you should first
 type a single category character to narrow down the list of candidates to a
 manageable number:
 
@@ -47,7 +47,7 @@ manageable number:
   ɓ`and `ʙ`, etc.) Characters based on the glottal stop `ʔ` use `?` as the
   category character.
 - For Clicks: `|` (pipe).
-- Diacritics: `'` (apostrophe).
+- For diacritics: `'` (apostrophe).
 - For superscripts: `^` (circumflex).
 - For subscripts: `_` (underscore).
 
