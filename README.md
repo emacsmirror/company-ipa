@@ -30,3 +30,29 @@ By default this is bound to `~pp`. You can change this with:
 ```emacs
 (company-ipa-set-trigger-prefix "¬")
 ```
+
+Completion without company-flx
+------------------------------
+
+If you do not wish to use company-flx, completion is more cumbersome, but still
+possible. First, you should make sure that the completion trigger
+(`company-ipa-symbol-prefix`) is at least as long as
+`company-minimum-prefix-length`. (In the default setup for company and
+company-ipa this is the case.) Then, after typing the trigger, you should first
+type a single category character to narrow down the list of candidates to a
+manageable number:
+
+- For IPA vowels and consonants: the Latin alphabet character that most closely
+  resembles the IPA character (e.g., `a` for `ɐ, ɒ, ɑ` and `æ`, `b` for `β,
+  ɓ`and `ʙ`, etc.) Characters based on the glottal stop `ʔ` use `?` as the
+  category character.
+- For Clicks: `|` (pipe).
+- Diacritics: `'` (apostrophe).
+- For superscripts: `^` (circumflex).
+- For subscripts: `_` (underscore).
+
+After typing the category character, the list of possible completions should be
+sufficiently small to be able to locate the character with `M-n` and `M-p`, but
+it is of course possible to type further characters or `TAB` to narrow down the
+list further.
+
