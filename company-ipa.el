@@ -52,7 +52,7 @@
   :group 'company
   :prefix "company-ipa-")
 
-(defvar company-ipa-symbol-list-basic
+(defcustom company-ipa-symbol-list-basic
   '(("vowel" "a" "[vowel]" "open back unrounded" 593 "ɑ")
     ("vowel" "a" "[vowel]" "open-mid schwa" 592 "ɐ")
     ("vowel" "a" "[vowel]" "open back rounded" 594 "ɒ")
@@ -190,7 +190,32 @@
     ("diac" "^" "[sup]" "extra low tone" 783  "ȅ")
     ("diac" "^" "[sub]" "tie bar below" 860  "x͜x")
     ("diac" "^" "[sup]" "tie bar above " 865  "x͡x"))
-  "List of basic IPA symbols.")
+  "List of basic IPA symbols.
+Each item in this list is itself a list, consisting of the following elements:
+
+- a broad category label
+- a category character
+- a label
+- a description
+- the character code
+- the display symbol
+
+The character code determines the character that is inserted in
+the buffer.  All other elements (except the broad category label)
+are used to construe the string that is shown during completion
+and can be modified freely.  If you use `company-flx', this
+string consists of the category character, the label and the
+description.  If you do not use `company-flx', only the category
+character and the description are used, and spaces in the
+description are replaced with underscores."
+  :group 'company-ipa
+  :type '(repeat :tag "Character"
+                 (list (string :tag "Category")
+                       (string :tag "Category character")
+                       (string :tag "Label")
+                       (string :tag "Description")
+                       (integer :tag "Character code")
+                       (string :tag "Display symbol"))))
 
 (defcustom company-ipa-symbol-prefix "~pp"
   "Prefix for IPA insertion."

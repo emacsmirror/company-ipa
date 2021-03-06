@@ -56,3 +56,11 @@ sufficiently small to be able to locate the character with `M-n` and `M-p`, but
 it is of course possible to type further characters or `TAB` to narrow down the
 list further.
 
+You can customise the list of symbols, the description strings and even the
+category characters by modifying the variable `company-ipa-symbol-list-basic`.
+See the doc string of that variable for details.
+
+Note that the category character can be longer than a single character. This can
+be used to make some characters easily accessible. For example, if you set the
+category character for `æ` to `ae`, you can select this character by typing the
+trigger prefix followed by `ae` and then `RET`.
