@@ -34,7 +34,7 @@ By default this is bound to `~pp`. You can change this with:
 Completion without company-flx
 ------------------------------
 
-If you do not wish to use company-flx, completion is more cumbersome, but still
+If you do not wish to use `company-flx`, completion is more cumbersome, but still
 possible. First, you should make sure that the completion trigger
 (`company-ipa-symbol-prefix`) is at least as long as
 `company-minimum-prefix-length`. (In the default setup for `company` and
