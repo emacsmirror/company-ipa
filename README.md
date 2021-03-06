@@ -22,7 +22,7 @@ After the package is installed, you can enable `company-ipa` by adding the follo
 (add-to-list 'company-backends 'company-ipa-symbols-unicode)
 ```
 
-It is highly recomended that you use [`company-flx`](https://github.com/PythonNut/company-flx), otherwise completions will not work very well.
+It is highly recommended that you use [`company-flx`](https://github.com/PythonNut/company-flx), otherwise completions will not work very well.
 
 Use the variable `company-ipa-symbol-prefix` to change the prefix to trigger completion.
 By default this is bound to `~pp`. You can change this with:
